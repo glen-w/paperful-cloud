@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>I’ll clean your references</title>
+    <meta
+      name="description"
+      content="Open-access bibliography and a miss list. PDFs when the license allows and you keep the files."
+    />
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="canonical" href="https://paperful.cloud/" />
+    <meta property="og:title" content="I’ll clean your references" />
+    <meta
+      property="og:description"
+      content="Open-access bibliography and a miss list. PDFs when the license allows and you keep the files."
+    />
+    <meta property="og:image" content="https://paperful.cloud/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="I’ll clean your references."
+    />
+    <meta property="og:url" content="https://paperful.cloud/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="I’ll clean your references" />
+    <meta
+      name="twitter:description"
+      content="Open-access bibliography and a miss list. PDFs when the license allows and you keep the files."
+    />
+    <meta name="twitter:image" content="https://paperful.cloud/og.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #101820;
+        --ink-soft: #3d4a55;
+        --paper: #f7f1e8;
+        --paper-deep: #eadfcf;
+        --accent: #c46a2a;
+        --accent-deep: #9a4e1c;
+        --line: rgba(16, 24, 32, 0.12);
+        --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+        --font-body: "Source Sans 3", "Segoe UI", sans-serif;
+        --header-height: 3.5rem;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: var(--font-body);
+        color: var(--ink);
+        background:
+          radial-gradient(1000px 520px at 85% -5%, rgba(196, 106, 42, 0.18), transparent 50%),
+          linear-gradient(165deg, #fbf7f0 0%, var(--paper) 45%, var(--paper-deep) 100%);
+        line-height: 1.55;
+        min-height: 100vh;
+      }
+
+      a {
+        color: var(--accent-deep);
+      }
+
+      .skip {
+        position: absolute;
+        left: -999px;
+        top: 0;
+        background: var(--ink);
+        color: #fff;
+        padding: 0.5rem 0.75rem;
+        z-index: 20;
+      }
+
+      .skip:focus {
+        left: 0.5rem;
+        top: 0.5rem;
+      }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 60;
+        backdrop-filter: blur(10px);
+        background: rgba(247, 241, 232, 0.92);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .header-inner {
+        width: min(1080px, calc(100% - 2.5rem));
+        margin-inline: auto;
+        display: flex;
+        align-items: center;
+        min-height: var(--header-height);
+      }
+
+      .brand {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1.25rem;
+        text-decoration: none;
+        color: var(--ink);
+        letter-spacing: -0.02em;
+      }
+
+      h1 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: clamp(1.35rem, 2.7vw, 1.85rem);
+        line-height: 1.28;
+        letter-spacing: -0.02em;
+        color: var(--ink);
+        margin: 0 0 0.75rem;
+      }
+
+      .frame {
+        width: min(1080px, calc(100% - 2.5rem));
+        margin-inline: auto;
+      }
+
+      .spoken {
+        width: min(52rem, 100%);
+        padding: 1.15rem 0 1.5rem;
+      }
+
+      .offer {
+        margin: 0 0 1.15rem;
+        font-size: 1.125rem;
+        max-width: 40rem;
+      }
+
+      .doors {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.85rem;
+        margin: 0 0 0.85rem;
+      }
+
+      .door {
+        margin: 0;
+        padding: 0.95rem 1rem 1.05rem;
+        border-radius: 0.4rem;
+      }
+
+      .door h2 {
+        font-family: var(--font-display);
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+        margin: 0 0 0.45rem;
+      }
+
+      .door-coffee h2 {
+        margin: 0.85rem 0 0;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: var(--font-body);
+      }
+
+      .door p {
+        margin: 0;
+      }
+
+      .door-mail {
+        background: rgba(255, 255, 255, 0.45);
+        border: 1px solid var(--line);
+      }
+
+      .door-coffee {
+        background: rgba(196, 106, 42, 0.12);
+        border: 1px solid var(--accent);
+      }
+
+      .who {
+        margin: 0 0 0.35rem;
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: var(--ink-soft);
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.7rem 1.15rem;
+        border-radius: 0.35rem;
+        background: var(--accent);
+        color: #fff8f2;
+      }
+
+      .btn:hover,
+      .btn:focus-visible {
+        background: var(--accent-deep);
+      }
+
+      .btn:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--accent-deep);
+        outline-offset: 2px;
+      }
+
+      .tool-line,
+      .receipt {
+        margin: 0;
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+
+      .after {
+        width: min(40rem, 100%);
+        margin: 0 0 2.5rem;
+        padding-top: 0.25rem;
+      }
+
+      .after h2 {
+        font-family: var(--font-display);
+        font-size: 1.35rem;
+        font-weight: 500;
+        margin: 0 0 0.75rem;
+      }
+
+      .after p {
+        margin: 0 0 0.9rem;
+      }
+
+      .after code {
+        font-size: 0.92em;
+      }
+
+      .site-footer {
+        padding: 1.25rem 0 1.75rem;
+        border-top: 1px solid var(--line);
+        color: var(--ink-soft);
+        font-size: 0.95rem;
+      }
+
+      .footer-inner {
+        width: min(1080px, calc(100% - 2.5rem));
+        margin-inline: auto;
+      }
+
+      .footer-inner p {
+        margin: 0.2rem 0;
+      }
+
+      @media (max-width: 720px) {
+        .doors {
+          grid-template-columns: 1fr;
+          gap: 0.65rem;
+        }
+
+        .spoken {
+          padding-top: 0.7rem;
+        }
+
+        h1 {
+          margin-bottom: 0.45rem;
+        }
+
+        .offer {
+          margin-bottom: 0.75rem;
+        }
+
+        .door {
+          padding: 0.75rem 0.9rem 0.85rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="/">paperful</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="frame">
+      <div class="spoken">
+        <h1>I’ll clean your references.</h1>
+        <p class="offer">
+          Open-access bibliography and a miss list. PDFs when the license
+          allows and you keep the files. I don’t host them. I don’t use
+          Sci-Hub. Never.
+        </p>
+
+        <div class="doors">
+          <article class="door door-mail">
+            <p class="who">If I wrote to you</p>
+            <h2>Reply to that mail</h2>
+            <p>
+              One collection, free. Bibliography and a miss list. Open access
+              only.
+            </p>
+          </article>
+          <article class="door door-coffee">
+            <p class="who">Everyone else</p>
+            <p>
+              Including someone this page or a bibliography was forwarded to.
+              A coffee. Same job. A coffee does not buy an exception.
+            </p>
+            <h2>
+              <a
+                class="btn"
+                href="https://ko-fi.com/C0C1XK8G"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Clean a collection</a
+              >
+            </h2>
+          </article>
+        </div>
+
+        <p class="tool-line">
+          If you will install it yourself, the tool is the open-source page:
+          <a href="https://paperful.app/">paperful.app</a>.
+          <a href="https://glenwright.earth/Paperful/">glenwright.earth/Paperful</a>
+          opens the same page.
+        </p>
+      </div>
+
+      <section class="after">
+        <h2>What I send back</h2>
+        <p>
+          You already have the pile. I run the fill. You get a bibliography
+          and a miss list back, in the reference manager you already use.
+          RIS, BibTeX, CSV, EndNote XML, and <code>misses.csv</code>. Zotero
+          is the one that is well tested. Mendeley and EndNote adapters are
+          seeking testers.
+        </p>
+        <p>
+          The miss list is the product. A miss is one of these:
+          <code>no_doi</code>, <code>paywalled</code>, <code>no_oa</code>,
+          <code>fetch_failed</code>, <code>license_blocked</code>.
+        </p>
+        <p>
+          PDFs are an add-on, and both of these have to be true. You already
+          have somewhere to put the files — a zip you will store, or a WebDAV
+          URL you already have. And the license lets you keep a copy. Open
+          access is not permission for me to hand the file over. If the terms
+          do not allow the copy, you get the link and fetch it yourself. Any
+          file that leaves keeps its provenance (<code>paperful oa:…</code>).
+          I will not put a Sci-Hub stamp on anything I send you.
+        </p>
+        <p>
+          You keep Zotero. You hold the disk. I run the commands and hand
+          over a zip or a folder. I do not host your library, your PDFs, or a
+          Zotero server.
+        </p>
+        <p>
+          For a job I do for someone else, the sources are open-access
+          indexes only: Unpaywall, OpenAlex, arXiv, bioRxiv/medRxiv, Europe
+          PMC, Semantic Scholar, CORE, and the item’s own URL. Campus access
+          is your library card, on your machine. Grey literature and policy
+          packs are not part of this.
+        </p>
+        <p>
+          A full Zotero quota is a normal result. Citation data sync is
+          already free. The quota is attachments: 300&nbsp;MB free, then paid
+          Zotero storage. WebDAV is for a personal library only. Group
+          libraries cannot use WebDAV. Files on WebDAV are not the same as
+          files in the zotero.org web library. Zotero will not support a
+          third-party WebDAV server.
+        </p>
+        <p class="receipt">
+          If a grant line needs a receipt, say so in the reply.
+        </p>
+      </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>Glen Wright. The tool’s public tag is v0.9.</p>
+      </div>
+    </footer>
+  </body>
+</html>
